@@ -3,15 +3,15 @@ title: "Metagenomic Cloud services"
 teaching: 5
 exercises: 15
 questions:
-- "Checking and Previewing: How can lesson formatting be checked?"
-- "How can lessons be previewed?"
+- "How can I get a preliminary exploration of the data?"
+- "How much information can I get from this exploration?"
 objectives:
-- "Run the lesson checking script and interpret its output correctly."
-- "Preview a lesson locally."
+- "Get acquainted with AWS machine service."
+- "Use MG RAST to do a preliminary exploration of the data."
 keypoints:
-- "Lessons are checked by running `make lesson-check`."
-- "The checker uses the same Markdown parser as Jekyll."
-- "Lessons can be previewed by running `make serve`."
+- "Every machine service and programming language have its own peculiarities, but knowing the command line basics helps to get familiarized faster with them."
+- "A pre-visualization of the information contained in the data is useful to direct the next steps for knowledge gain."
+- "Exploration helps to visualize any unexpected results from the data."
 ---
 
 
@@ -21,16 +21,16 @@ There are web and command line cloud services. Through this lesson we will run a
 full example using the command line, nevertheless there are also metagenomic web 
 services available. For example, MG Rast is an on line metagenomic plataform where 
 you can upload your raw data with its corresponding metadata and obtain a full run
-of their pipeline. MgRAST is a great resource as a public repository for your datasets. 
+of their pipeline. MG RAST is a great resource as a public repository for your datasets. 
 Although command line workflows are more flexible and adaptable to individual needs, 
 automatized web servers can give us a preliminar idea of the content of our data. 
 Cuatro cienegas data used in this tutorial are available at MG RAST 
 as [mgp96823](https://www.mg-rast.org/mgmain.html?mgpage=project&project=mgp96823). 
 
-## Cuatro cienegas in MgRAST  
-Lets explore some of the MgRAST results to our data. First we can see the metabolic content
-of our data in a metabolic piechart. Since our Cuatro Cienegas data come from a shotgun experiment, 
-the distribution of the metaboliccontent of its genes can be known, even without knowin from which 
+## Cuatro cienegas in MG RAST  
+Lets explore some of the MG RAST results to our data. First, we can see a functional characterization 
+of our data in a piechart. Since our Cuatro Cienegas data come from a shotgun experiment, 
+the distribution of the metabolic content of its genes can be known, even without knowing from which 
 taxonomical lineage those genes are comming. Here it is shown that the genetic material of 
 this sample is mainly devoted to metabolism.  
 
@@ -51,7 +51,7 @@ this sample is mainly devoted to metabolism.
 </a>
 
 After metabolic features, there is some information about the taxonomixal distribution of the 
-sample. First we can see that according to MgRAST the predominant taxonomic lineage of this sample is bacteria.  
+sample. First, we can see that according to MG RAST the predominant taxonomic lineage of this sample is bacteria.  
 
 <a href="{{ page.root }}/fig/md-02-mgm4913055.3_domain.png">
   <img src="{{ page.root }}/fig/md-02-mgm4913055.3_domain.png" alt="Domain" />
@@ -62,18 +62,18 @@ sample. First we can see that according to MgRAST the predominant taxonomic line
   <img src="{{ page.root }}/fig/md-02-mgm4913055.3_genus.png" alt="Genus" />
 </a>
 
-Going deeply in taxonomy, we can see that the mos abundant phylum is Proteobacteria.  
+Going deeply in taxonomy, we can see that the most abundant phylum is Proteobacteria.  
 <a href="{{ page.root }}/fig/md-02-mgm4913055.3_phylum.png">
   <img src="{{ page.root }}/fig/md-02-mgm4913055.3_phylum.png" alt="Phylum" />
 </a>
 
 > ## Exercise
 > 
-> According to MgRAST which family is the most abundant?
+> According to MG RAST which family is the most abundant?
 > 
 > 
 >> ## Solution
->>  The piechart from MgRAST shows Rodhobacteraceae as the most abundant family. 
+>>  The piechart from MG RAST shows Rodhobacteraceae as the most abundant family. 
 >> 
 > {: .solution}
 {: .challenge}
@@ -81,7 +81,7 @@ Going deeply in taxonomy, we can see that the mos abundant phylum is Proteobacte
 
 ## AWS is a command line cloud server. 
 The machine that you are going to use is provided by amazon web services, it is equiped with all 
-command line metagenomic tools needed fot this workshop. Lets practice log in into this service and 
+command line metagenomic tools needed fot this workshop. Let's practice login into this service and 
 copy files from your local computer to your remote instance of AWS.  
 
 ~~~
@@ -96,20 +96,20 @@ System information as of Fri Nov 27 06:29:17 UTC 2020
 ~~~
 {: .output}
 
-You can ask the remote AWS machine to print working directory with `pwd` .
+You can ask the remote AWS machine to print the working directory with `pwd` .
 ~~~
 $ pwd 
 ~~~
 {: .bash}
   
-And it will will show you that you are in dcuser.  
+And it will show you that you are in dcuser.  
 ~~~
 $ /home/dcuser  
 ~~~
 {: .output}
 
 Data have been preloaded for you but they are compressed,
-please decompress them using `tar` command.  
+please decompress them using the `tar` command.  
 ~~~
 $ tar -xzf ~/mgdata.tar.gz 
 ~~~
@@ -126,7 +126,7 @@ it will show some local directory in your local computer.
 You can copy files from you local to your remote machine and viceversa. 
 A general guideline using the command secure copy (`scp`) would be as follows: 
 ~~~
-$ scp <where is the file> <where you want the file to be>  
+$ scp <where is the file> <where you want the file to be copied>  
 ~~~
 {: .output}  
 
@@ -147,7 +147,7 @@ MGRAST_MetaData_JP.xlsx                          100%   53KB 164.8KB/s   00:00
 
 > ## Exercise 1 copy local files into AWS remote instance
 > 
-> What would be the correctsinatx to upload some local file named `APJ4_MetaData_JP.xlsx.` 
+> What would be the correct sinatx to upload some local file named `APJ4_MetaData_JP.xlsx.` 
 > into you AWS remote instance?  
 >
 >   a) ssh dcuser@ec2-3-238-253-45.compute-1.amazonaws.com:/home/dcuser/. APJ4_MetaData_JP.xlsx  
@@ -162,7 +162,7 @@ MGRAST_MetaData_JP.xlsx                          100%   53KB 164.8KB/s   00:00
 >> ~~~
 >> {: .bash}
 >> ~~~ 
->> c option is the only one that uses secure copy command.   
+>> c option is the only one that uses the secure copy command.   
 >> ~~~
 >> {: .output}
 > {: .solution}
@@ -173,16 +173,16 @@ MGRAST_MetaData_JP.xlsx                          100%   53KB 164.8KB/s   00:00
 >  At what depth was the sample collected?
 >> ## Solution
 >> R- 0.165. Either open the metadata excell file in your local computer or go to 
->> the MgRAST website of the project. 
+>> the MG RAST website of the project. 
 > {: .solution}
 {: .challenge}
 
 > ## Exercise 3 Your own project  
 >  You can find metagenomic data in your AWS remote instance
 > located at /home/dcuser/dc_workshop/assembly/JP4DASH2120627WATERAMPRESIZED.fasta 
->  With this data upload your own project to mgRAST. What else do you need?   
+>  With this data upload your own project to MG RAST. What else do you need?   
 >> ## Solution
->> MgRAST will ask you for a metadata file and genomic data. 
+>> MG RAST will ask you for a metadata file and genomic data. 
 >>
 >> The metadata file has been previously downloaded in this lesson.    
 >>
@@ -193,7 +193,7 @@ MGRAST_MetaData_JP.xlsx                          100%   53KB 164.8KB/s   00:00
 >> ~~~
 >> {: .bash}
 >>
->> Upload this files to your MgRAST account.  
+>> Upload this files to your MG RAST account.  
 > {: .solution}
 {: .challenge}
 
