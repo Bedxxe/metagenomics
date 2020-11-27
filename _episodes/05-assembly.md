@@ -4,11 +4,11 @@ teaching: 15
 exercises: 5
 questions:
 - "Why genomic data should be assembled?"
-- "What is the difference between reads and contigs"
-- "How can we enamble a metagenome"
+- "What is the difference between reads and contigs?"
+- "How can we enamble a metagenome?"
 objectives: 
 - "Understand what is an assembly"  
-- "Use an enviroment in a bioinformatic pipeline"   
+- "Use an environment in a bioinformatic pipeline"   
 keypoints:
 - "Assemblies uses algorithms to group reads into contigs"
 - "Three famous algorithms are Greedy extension, OLC and De Bruijin graphs"
@@ -46,11 +46,11 @@ megahit: command not found
 
 
 ## Activating metagenomic environment  
-Environments are part of a bioinformatic tendency to make repdoucible research, 
+Environments are part of a bioinformatic tendency to make reproducible research, 
 they are a way to share our computational environments with our colleges and 
 with our future self.  Megahit is not activated in the (base) environment but 
 this AWS instances came with an environment called metagenomics. We need to activate 
-it in order to satrt using megahit. 
+it in order to start using megahit. 
 
 Conda environments are activated with `conda activate` direction:  
 ~~~
@@ -64,7 +64,7 @@ After the environment has been activated a label is shown before the `$` sign.
 ~~~
 {: .output}
 
-Now if we call megahit at the command line it wont be any error, 
+Now if we call megahit at the command line it won't be any error, 
 instead a long help will be displayed at our screen.   
 ~~~
 megahit
@@ -80,7 +80,7 @@ Usage:   megahit [options] {-1 <pe1> -2 <pe2> | --12 <pe12> | -r <se>} [-o <out_
  
 > ## `.callout`
 >
-> Enviroments help in science reproducibility, allowing to share the specific conditions in which a pipeline is run
+> Environments help in science reproducibility, allowing to share the specific conditions in which a pipeline is run
 > Conda is an open source package management system and environment management system that runs on Windows, macOS and 
 > Linux.
 {: .callout}
@@ -143,7 +143,7 @@ Usage:   megahit [options] {-1 <pe1> -2 <pe2> | --12 <pe12> | -r <se>} [-o <out_
 
 > ## `.discussion`
 >
-> ¿Does amplicon metagenomics needs an assembly step in its analysis worflow?  
+> Does amplicon metagenomics needs an assembly step in its analysis worflow?  
 {: .discussion}
 
                              
