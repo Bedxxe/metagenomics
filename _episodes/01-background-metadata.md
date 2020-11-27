@@ -58,7 +58,7 @@ The primers we choose are VERY IMPORTANT. We always have biases that can change 
 
 > ## Amplicon or Shotgun? 
 >
-> Suppose you would like to compare the microbiome of sintomatic vs asintomatic pacients in certain disease.  
+> Suppose you would like to compare the microbiomes' metabolic diversity of sintomatic vs asintomatic pacients in certain disease. 
 > Which type or metagenomics would you choose?  
 > If you would to investigate variation of a certain gene in a microorganisms community would you use Amplicon
 > or shotgun metagenomics?
