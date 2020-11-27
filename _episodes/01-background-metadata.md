@@ -123,12 +123,13 @@ Metadata is the data about data. This metadata describes information on one Cuat
 
 > ## `.callout`
 >
-> An aside or other comment.
+> In order for knowledge to grow, it is imperative to share raw data to give the opportunity to be analyzed from different perspectives and thus, gain insights
+> that for a group would be difficult to contrive on its own.
 {: .callout}
 
 > ## `.discussion`
 >
-> Discussion questions.
+> Does metagenomic characterization of closely located (meters or centimeters) sites can give contrasting information?
 {: .discussion}
 
 
