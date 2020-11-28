@@ -32,7 +32,7 @@ each of your data files and makes your work less error-prone and more reproducib
 For example, the variant calling workflow we just carried out had about eight steps
 where we had to type a command into our terminal. Most of these commands were pretty 
 long. If we wanted to do this for all six of our data files, that would be forty-eight
-steps. If we had 50 samples (a more realistic number), it would be 400 steps! You can
+steps. If we had 50 samples (a more realistic number), it would be 400 steps! Now, you can
 see why we want to automate this.
 
 We've also used `for` loops in previous lessons to iterate one or two commands over multiple input files. 
@@ -221,3 +221,9 @@ Approx 30% complete for JC1ASEDIMENT120627_R1.fastq.gz
 . 
 ~~~
 {: .output}
+
+As you are already familiarized with each one of the needed steps, 
+if an error shows up do not panic, pay close attention to what the 
+mistake says, and try to figure out on which of the steps(lines) 
+the problem is localized.
+
